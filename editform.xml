@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension group="fabrik_form" method="upgrade" type="plugin" version="3">
+	<name>plg_fabrik_form_editform</name>
+	<author>Rafael Dias Soares</author>
+	<creationDate>September 2020</creationDate>
+	<copyright>Copyright (C) 2022 CETT. - All rights reserved.</copyright>
+	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>rafaelds.89@gmail.com</authorEmail>
+	<authorUrl>www.fabrikar.com</authorUrl>
+	<version>1.0</version>
+	<help url="PLG_FORM_EDITFORM_HELP_SERVER"/>
+	<description>PLG_FORM_EDITFORM_DESCRIPTION</description>
+	<files>
+		<filename plugin="editform">editform.php</filename>
+		<filename>index.html</filename>
+		<filename>editform.js</filename>
+		<filename>editform-min.js</filename>
+		<folder>forms</folder>
+		<folder>language</folder>
+	</files>
+</extension>
