@@ -80,14 +80,24 @@ class PlgFabrik_FormEditform extends PlgFabrik_Form{
 	public function onAfterJSLoad() {
 		$params = $this->getParams();
 		$formModel = $this->getModel();		
+		$showEditForm = false;
 
-		$opts = new stdClass;		
+		$user = JFactory::getUser();
+		$levels = JAccess::getAuthorisedViewLevels($user->id);
+		
+		if (in_array($params->get('editform_user_level', NULL), $levels)) {
+			$showEditForm = true;
+		}
+
+		$opts = new stdClass;	
+		$opts->showEditForm = $showEditForm;
 		$opts->baseUrl = JUri::base();
-		$opts->css = $params;
+		$opts->params = $params;
 		$opts->formid = $formModel->getId();
 		$opts->table = $params->get('formplus_table', '');		
 		$opts->elements = $this->getGroupElements($formModel->groups);
 		$opts = json_encode($opts);	
+
 
 		$this->formJavascriptClass($params, $formModel);
 		$formModel->formPluginJS['Editform' . $this->renderOrder] = ' var editform = new Editform(' . $opts . ');';

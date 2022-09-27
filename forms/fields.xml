@@ -6,34 +6,19 @@
 
 		<fieldset name="plg-form-editform" label="COM_FABRIK_DATA">
 
-			<field name="editform_css"
+			<field name="editform_user_level"
 
-				type="textarea"
+			       type="number"
 
-				cols="30"
+			       description="PLG_FORM_EDITFORM_DESC_USER_LEVEL"
 
-				description="PLG_FORM_EDITFORM_DESC_ELEMENT_CSS"
+			       label="PLG_FORM_EDITFORM_USER_LEVEL"
 
-				label="PLG_FORM_EDITFORM_ELEMENT_CSS"
-
-				repeat="true"
-
-				rows="6" />
-
-
-			<field name="editform_bgimage_url"
-
-			       type="text"
-
-			       description="PLG_FORM_EDITFORM_DESC_BG_IMAGE_URL"
-
-			       label="PLG_FORM_EDITFORM_BG_IMAGE_URL"
-
-			       size="200"
+			       size="10"
 
 			       repeat="true"
 
-			/>			
+			/>		
 
 		</fieldset>
 
