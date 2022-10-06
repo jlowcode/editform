@@ -30,7 +30,7 @@
 				const { baseUrl } = options;
 				const { elements } = options;
 				const form = document.querySelector('.fabrikForm');
-				form.innerHTML += this.htmlModal();
+				form.innerHTML += this.htmlModal(baseUrl);
 	
 				const labels = Array.from(document.querySelectorAll('label'));
 	
@@ -120,13 +120,13 @@
 			
 		
 		},
-		htmlModal: function() {
+		htmlModal: function(baseUrl) {
 			return `
 			<style>
 				.window{	
 					display: none;
 					width: 90%;
-					height: 90%;
+					height: 90vh;
 					position: absolute;
 					background: #FFF ;
 					left: 0;
@@ -153,7 +153,7 @@
 			<!-- <a href="#janela" rel="Modal">Abrir Janela Modal</a> -->
 			<div class="window" id="janela">
 				<a href="#" class="fechar" style="margin-right:10px; ">X Fechar</a>
-				<iframe id="iframe-url" height="100%" width="100%" src="http://localhost:8888/administrator/index.php?option=com_fabrik&view=element&layout=edit" title="W3Schools Free Online Web Tutorials"></iframe>
+				<iframe id="iframe-url" height="100%" width="100%" src="${baseUrl}/administrator/index.php?option=com_fabrik&view=element&layout=edit" title="W3Schools Free Online Web Tutorials"></iframe>
 			</div>
 			<div id="mascara"></div>
 			`
