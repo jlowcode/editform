@@ -74,8 +74,36 @@ class PlgFabrik_FormEditform extends PlgFabrik_Form{
 		$params = $this->getParams();
 		$formModel = $this->getModel();
 		$groupView = $formModel->groupView;
+
 		return true;
 	}
+
+
+
+	/**
+	 * Inject new element button in top content
+	 *
+	 * @return void
+	 */
+	public function getTopContent()
+	{
+		//Add style to tooltipElement
+
+		$this->html = $this->createButtonNewElement();
+		return true;
+	}
+	
+	/**
+	 * Inject new element button in bottom content
+	 *
+	 * @return void
+	 */
+	public function getBottomContent()
+	{
+		$this->html = $this->createButtonNewElement();
+		return true;
+	}
+
 
 	public function onAfterJSLoad() {
 		$params = $this->getParams();
@@ -109,5 +137,9 @@ class PlgFabrik_FormEditform extends PlgFabrik_Form{
 	   	}
 
 		return $elements;
+	}
+
+	public function createButtonNewElement() {
+		return '<a rel="modal" title="Adicionar novo elemento" href="#janela"><i data-isicon="true" class="icon-plus"></i></a>';
 	}
 }

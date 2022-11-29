@@ -52,6 +52,7 @@
 					var button = document.createElement("i");
 					button.className = "icon-edit";
 					button.style = "cursor: pointer; ";
+					button.title = "Alterar este elemento";
 					button.addEventListener ("click", function() {
 						const url = `${baseUrl}administrator/index.php?option=com_fabrik&view=element&layout=edit&id=${item.idElement}`;
 						document.querySelector('#iframe-url').src = url;
@@ -71,22 +72,22 @@
 				});
 				
 				
-				const createElement = () => {				
-					const addElement = `
-					<a class="addbutton addRecord" href="#">
-						<i data-isicon="true" class="icon-plus"></i> Elemento 
-					</a>`;
+				// const createElement = () => {				
+				// 	const addElement = `
+				// 	<a class="addbutton addRecord" href="#">
+				// 		<i data-isicon="true" class="icon-plus"></i> Elemento 
+				// 	</a>`;
 	
-					var link = document.createElement("a");
-					link.rel = "modal";
-					link.href = "#janela";
-					link.innerHTML = addElement;
+				// 	var link = document.createElement("a");
+				// 	link.rel = "modal";
+				// 	link.href = "#janela";
+				// 	link.innerHTML = addElement;
 	
-					return link;
-				}
+				// 	return link;
+				// }
 	
-				document.querySelector('.nav').appendChild(createElement());
-				form.appendChild(createElement());
+				// document.querySelector('.nav').appendChild(createElement());
+				// form.appendChild(createElement());
 	
 				jQuery("a[rel=modal]").click(function(ev){
 					ev.preventDefault();
