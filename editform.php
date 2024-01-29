@@ -128,7 +128,7 @@ class PlgFabrik_FormEditform extends PlgFabrik_Form{
 
 
 		$this->formJavascriptClass($params, $formModel);
-		$formModel->formPluginJS['Editform' . $this->renderOrder] = ' var editform = new Editform(' . $opts . ');';
+		$formModel->formPluginJS['Editform' . $this->renderOrder] = 'editform = new Editform(' . $opts . ')';
 	}
 
 	public function getGroupElements($groups) {
