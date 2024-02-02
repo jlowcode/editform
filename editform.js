@@ -10,7 +10,7 @@
 
  */
 
- define(['jquery', 'fab/fabrik'], function (jQuery, Fabrik) {
+define(['jquery', 'fab/fabrik'], function (jQuery, Fabrik) {
 
 	'use strict';
 
@@ -24,14 +24,17 @@
             elements             : '',
 		},
 		
-		initialize: function (options) {
+		initialize: function (form, options) {
 			// Exibe a edição do formulário de acordo com o nível do usuário logado
 			if(options.showEditForm) {
 				const { baseUrl } = options;
 				const { elements } = options;
 				const form = document.querySelector('.fabrikForm');
-				form.innerHTML += this.htmlModal(baseUrl);
-	
+
+				var modalContent = document.createElement('div');
+				modalContent.innerHTML = this.htmlModal(baseUrl);
+				form.appendChild(modalContent);
+
 				const labels = Array.from(document.querySelectorAll('label'));
 	
 				/**

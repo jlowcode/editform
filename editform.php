@@ -125,10 +125,10 @@ class PlgFabrik_FormEditform extends PlgFabrik_Form{
 		$opts->table = $params->get('formplus_table', '');		
 		$opts->elements = $this->getGroupElements($formModel->groups);
 		$opts = json_encode($opts);	
-
+		$container = $formModel->jsKey();
 
 		$this->formJavascriptClass($params, $formModel);
-		$formModel->formPluginJS['Editform' . $this->renderOrder] = 'editform = new Editform(' . $opts . ')';
+		$formModel->formPluginJS['Editform'] = "new Editform($container, $opts)";
 	}
 
 	public function getGroupElements($groups) {
